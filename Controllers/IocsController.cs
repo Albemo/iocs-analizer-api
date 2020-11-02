@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using iocs_analizer_api.Data;
@@ -24,7 +25,7 @@ namespace iocs_analizer_api.Controller
         {
             var items = await _repository.GetAllIocsAsync();
 
-            return Ok(_mapper.Map<IEnumerable<IocReadDto>>(items));
+            return Ok(_mapper.Map<IEnumerable<IocReadDto>>(items.OrderByDescending(x => x.Id)));
         }
 
         [HttpGet("{id}")]
