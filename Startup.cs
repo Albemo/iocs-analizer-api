@@ -33,7 +33,7 @@ namespace iocs_analizer_api
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:3000")
+                        builder.WithOrigins()
                         .AllowAnyMethod()
                         .AllowAnyHeader();
                     });
