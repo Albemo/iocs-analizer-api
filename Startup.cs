@@ -33,7 +33,7 @@ namespace iocs_analizer_api
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins()
+                        builder.AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader();
                     });
@@ -56,8 +56,6 @@ namespace iocs_analizer_api
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
